@@ -20,8 +20,14 @@ const s3BucketName = 'jsonimages'; // Replace with your S3 bucket name
 
 // Define the path to your JSON file
 const jsonFilePath = path.join(__dirname, 'JSON', 'cbse-6-12', 'questions.json');
+<<<<<<< HEAD
 const assetsFilePath = path.join(__dirname, 'JSON', 'cbse-6-12', 'assets.json');
 
+=======
+
+// Define the path to your assets_old.json file
+const assetsFilePath = path.join(__dirname, 'JSON', 'cbse-6-12', 'assets.json');
+>>>>>>> b06114c13e68d8533463fc0352bd8f58aca869f2
 
 // Function to create a text file with the given content
 async function createTextFile(filename, content) {
@@ -41,14 +47,22 @@ async function checkImageExists(imageName) {
   };
 
   try {
+<<<<<<< HEAD
     await s3Client.send(new HeadObjectCommand(params)); // Use s3Client.send here
+=======
+    await s3Client.send(new HeadObjectCommand(params));
+>>>>>>> b06114c13e68d8533463fc0352bd8f58aca869f2
     return true; // Image exists in S3
   } catch (err) {
     if (err.name === 'NotFound') {
       return false; // Image does not exist in S3
     } else {
+<<<<<<< HEAD
       console.error('Error checking image in S3:', err);
       throw err; // Rethrow the error for further investigation
+=======
+      throw err; // An error occurred while checking the image
+>>>>>>> b06114c13e68d8533463fc0352bd8f58aca869f2
     }
   }
 }
@@ -84,7 +98,11 @@ async function processAllJsonData() {
     while ((match = imageRegex.exec(data.question.text)) !== null) {
       const src = match[1];
       const isExtension = src.includes('.');
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> b06114c13e68d8533463fc0352bd8f58aca869f2
       // Check if the src contains an extension or not
       if (isExtension) {
         imageNames.push(src);
