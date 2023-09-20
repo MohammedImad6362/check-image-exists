@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-<<<<<<< HEAD
 const jsonFilePath = path.join(__dirname, 'S3-existence', 'cbse', 'images_not_exist.json'); // Replace with your JSON file path
 const imageFolderPath = 'C:\\Imad\\Test Question\\Image-assets\\assets-except-neet-jee\\ibps'; // Replace with your image folder path
 
@@ -76,5 +75,3 @@ if (existingImages.length === 0) {
 
 console.log('Results saved in missing_images.json and existing_images.json.');
  
-=======
->>>>>>> e60972ce40b4afea6ca784c2d7c00a112f9e7a99
